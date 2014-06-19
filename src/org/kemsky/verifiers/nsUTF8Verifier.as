@@ -1,5 +1,6 @@
-package org.kemsky
+package org.kemsky.verifiers
 {
+    import org.kemsky.*;
     public class nsUTF8Verifier extends nsVerifier
     {
         internal static var smCclass:Vector.<int>;

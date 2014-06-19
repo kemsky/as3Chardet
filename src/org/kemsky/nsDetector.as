@@ -2,7 +2,7 @@ package org.kemsky
 {
     import flash.utils.ByteArray;
 
-    public class nsDetector extends nsPSMDetector implements nsICharsetDetector
+    public class nsDetector extends nsPSMDetector
     {
         internal var mObserver:Function = null;
 

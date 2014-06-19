@@ -2,6 +2,31 @@ package org.kemsky
 {
     import flash.utils.ByteArray;
 
+    import org.kemsky.statistics.Big5Statistics;
+    import org.kemsky.statistics.EUCJPStatistics;
+    import org.kemsky.statistics.EUCKRStatistics;
+    import org.kemsky.statistics.EUCTWStatistics;
+
+    import org.kemsky.statistics.GB2312Statistics;
+
+    import org.kemsky.statistics.nsEUCStatistics;
+    import org.kemsky.verifiers.nsBIG5Verifier;
+    import org.kemsky.verifiers.nsCP1252Verifier;
+    import org.kemsky.verifiers.nsEUCJPVerifier;
+    import org.kemsky.verifiers.nsEUCKRVerifier;
+    import org.kemsky.verifiers.nsEUCTWVerifier;
+    import org.kemsky.verifiers.nsGB18030Verifier;
+    import org.kemsky.verifiers.nsGB2312Verifier;
+    import org.kemsky.verifiers.nsHZVerifier;
+    import org.kemsky.verifiers.nsISO2022CNVerifier;
+    import org.kemsky.verifiers.nsISO2022JPVerifier;
+    import org.kemsky.verifiers.nsISO2022KRVerifier;
+    import org.kemsky.verifiers.nsSJISVerifier;
+    import org.kemsky.verifiers.nsUCS2BEVerifier;
+    import org.kemsky.verifiers.nsUCS2LEVerifier;
+    import org.kemsky.verifiers.nsUTF8Verifier;
+    import org.kemsky.verifiers.nsVerifier;
+
     public class nsPSMDetector
     {
         public static const ALL:int = 0;

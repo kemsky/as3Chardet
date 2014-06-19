@@ -1,5 +1,6 @@
-package org.kemsky
+package org.kemsky.statistics
 {
+    import org.kemsky.*;
     public class EUCTWStatistics extends nsEUCStatistics
     {
         internal static var mFirstByteFreq:Vector.<Number>;

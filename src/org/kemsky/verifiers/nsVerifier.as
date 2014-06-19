@@ -1,14 +1,14 @@
-package org.kemsky
+package org.kemsky.verifiers
 {
     public class nsVerifier
     {
-        internal static const eStart:int = 0; //byte
-        internal static const eError:int = 1; //byte
-        internal static const eItsMe:int = 2; //byte
-        internal static const eidxSft4bits:int = 3;
-        internal static const eSftMsk4bits:int = 7;
-        internal static const eBitSft4bits:int = 2;
-        internal static const eUnitMsk4bits:int = 0x0000000F;
+        public static const eStart:int = 0; //byte
+        public static const eError:int = 1; //byte
+        public static const eItsMe:int = 2; //byte
+        public static const eidxSft4bits:int = 3;
+        public static const eSftMsk4bits:int = 7;
+        public static const eBitSft4bits:int = 2;
+        public static const eUnitMsk4bits:int = 0x0000000F;
 
         /**
          * Abstract

@@ -1,4 +1,4 @@
-package org.kemsky
+package org.kemsky.statistics
 {
     public class nsEUCStatistics
     {

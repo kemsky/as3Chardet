@@ -1,5 +1,6 @@
-package org.kemsky
+package org.kemsky.verifiers
 {
+    import org.kemsky.*;
     public class nsISO2022JPVerifier extends nsVerifier
     {
         internal static var smCclass:Vector.<int>;

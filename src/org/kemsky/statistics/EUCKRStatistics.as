@@ -1,8 +1,9 @@
 /**
  * Created by dookie on 19.06.2014.
  */
-package org.kemsky
+package org.kemsky.statistics
 {
+    import org.kemsky.*;
     public class EUCKRStatistics extends nsEUCStatistics
     {
         internal static var mFirstByteFreq:Vector.<Number>;
