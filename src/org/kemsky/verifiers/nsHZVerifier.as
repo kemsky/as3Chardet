@@ -4,31 +4,6 @@ package org.kemsky.verifiers
 
     public class nsHZVerifier extends nsVerifier
     {
-       private var smCclass:Vector.<int>;
-       private var smStates:Vector.<int>;
-       private var smStFactor:int;
-       private var smCharset:String;
-
-        public override function cclass():Vector.<int>
-        {
-            return smCclass;
-        }
-
-        public override function states():Vector.<int>
-        {
-            return smStates;
-        }
-
-        public override function stFactor():int
-        {
-            return smStFactor;
-        }
-
-        public override function charset():String
-        {
-            return smCharset;
-        }
-
         public function nsHZVerifier()
         {
             smCclass = new Vector.<int>(256 / 8);
@@ -79,11 +54,6 @@ package org.kemsky.verifiers
 
             smCharset = Charset.HZ_GB_2312;
             smStFactor = 6;
-        }
-
-        public override function isUCS2():Boolean
-        {
-            return false;
         }
     }
 }

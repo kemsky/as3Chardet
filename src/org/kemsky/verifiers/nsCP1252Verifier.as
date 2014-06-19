@@ -3,31 +3,6 @@ package org.kemsky.verifiers
     import org.kemsky.*;
     public class nsCP1252Verifier extends nsVerifier
     {
-       private var smCclass:Vector.<int>;
-       private var smStates:Vector.<int>;
-       private var smStFactor:int;
-       private var smCharset:String;
-
-        public override function cclass():Vector.<int>
-        {
-            return smCclass;
-        }
-
-        public override function states():Vector.<int>
-        {
-            return smStates;
-        }
-
-        public override function stFactor():int
-        {
-            return smStFactor;
-        }
-
-        public override function charset():String
-        {
-            return smCharset;
-        }
-
         public function nsCP1252Verifier()
         {
 
@@ -77,11 +52,6 @@ package org.kemsky.verifiers
             smCharset = Charset.windows_1252;
             smStFactor = 3;
 
-        }
-
-        public override function isUCS2():Boolean
-        {
-            return false;
         }
     }
 }

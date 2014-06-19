@@ -10,48 +10,40 @@ package org.kemsky.verifiers
         public static const eBitSft4bits:int = 2;
         public static const eUnitMsk4bits:int = 0x0000000F;
 
-        /**
-         * Abstract
-         * @return
-         */
+        protected var smIsUCS2:Boolean;
+        protected var smCclass:Vector.<int>;
+        protected var smStates:Vector.<int>;
+        protected var smStFactor:int;
+        protected var smCharset:String;
+
         public function charset():String
         {
-            return null;
+            return smCharset;
         }
 
-        /**
-         * Abstract
-         * @return
-         */
         public function stFactor():int
         {
-            return 0;
+            return smStFactor;
         }
 
-        /**
-         * Abstract
-         * @return
-         */
         public function cclass():Vector.<int>
         {
-            return null;
+            return smCclass;
         }
 
-        /**
-         * Abstract
-         * @return
-         */
         public function states():Vector.<int>
         {
-            return null;
+            return smStates;
         }
 
         /**
-         * Abstract
+         * Something is wrong here,
+         * temporarily set isUCS2 to false
          * @return
          */
         public function isUCS2():Boolean
         {
+            //return smIsUCS2;
             return false;
         }
 

@@ -3,31 +3,6 @@ package org.kemsky.verifiers
     import org.kemsky.*;
     public class nsUTF8Verifier extends nsVerifier
     {
-       private var smCclass:Vector.<int>;
-       private var smStates:Vector.<int>;
-       private var smStFactor:int;
-       private var smCharset:String;
-
-        public override function cclass():Vector.<int>
-        {
-            return smCclass;
-        }
-
-        public override function states():Vector.<int>
-        {
-            return smStates;
-        }
-
-        public override function stFactor():int
-        {
-            return smStFactor;
-        }
-
-        public override function charset():String
-        {
-            return smCharset;
-        }
-
         public function nsUTF8Verifier()
         {
             smCclass = new Vector.<int>(256 / 8);
@@ -99,11 +74,6 @@ package org.kemsky.verifiers
             smCharset = Charset.UTF_8;
             smStFactor = 16;
 
-        }
-
-        public override function isUCS2():Boolean
-        {
-            return false;
         }
     }
 }
