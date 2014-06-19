@@ -103,8 +103,8 @@ package org.kemsky
         {
             for (var i:int = 0; i < 94; i++)
             {
-                mFirstByteFreq[i] = mFirstByteCnt[i] / (mTotal + 0.0);
-                mSecondByteFreq[i] = mSecondByteCnt[i] / (mTotal + 0.0);
+                mFirstByteFreq[i] = (mFirstByteCnt[i] + 0.0) / (mTotal + 0.0);
+                mSecondByteFreq[i] = (mSecondByteCnt[i] + 0.0) / (mTotal + 0.0);
             }
         }
 

@@ -43,7 +43,7 @@ package org.kemsky.verifiers
          */
         public function isUCS2():Boolean
         {
-            //return smIsUCS2;
+//            return smIsUCS2;
             return false;
         }
 
