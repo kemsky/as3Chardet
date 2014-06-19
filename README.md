@@ -18,12 +18,12 @@ More information can be found at http://www.mozilla.org/projects/intl/chardet.ht
     fileStream.open(file, FileMode.READ);
     try
     {
-        result = new CharsetDetector().detect(fileStream, 4);
+        result = new CharsetDetector().detect(fileStream, 4 /*buffer size*/);
     }
     finally
     {
         fileStream.close();
     }
     
-    log.info("Charsets: {0}\n", result);
+    log.info("Charsets: {0}", result);
 ```
