@@ -20,7 +20,7 @@ package org.kemsky
         public static const EUC_JP:String = "euc-jp";
         public static const windows_1252:String = "Windows-1252";
         public static const Big5:String = "big5";
-        public static const Ascii:String = "us-ascii";
+        public static const ASCII:String = "us-ascii";
         public static const HZ_GB_2312:String = "hz-gb-2312";
     }
 }

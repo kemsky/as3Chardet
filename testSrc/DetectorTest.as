@@ -39,7 +39,7 @@ package
             var file:File = root.resolvePath("ISO-8859-1.properties");
 
             var charset:String = getCharset(file);
-            assertEquals(Charset.Ascii, charset);
+            assertEquals(Charset.ASCII, charset);
         }
 
         [Test]

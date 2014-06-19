@@ -84,9 +84,9 @@ package org.kemsky
                 {
                     if(Log.isDebug())
                     {
-                        log.debug("Detected charset {0}", Charset.Ascii);
+                        log.debug("Detected charset {0}", Charset.ASCII);
                     }
-                    result.push(Charset.Ascii);
+                    result.push(Charset.ASCII);
                 }
                 else
                 {
