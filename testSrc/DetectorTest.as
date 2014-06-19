@@ -103,8 +103,6 @@ package
                     {
                         done = det.DoIt(buffer, false);
                     }
-
-                    buffer.length = 0;
                 }
             }
             finally
