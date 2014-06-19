@@ -31,7 +31,7 @@ package
         [Test]
         public function testUtf8():void
         {
-            var utf8:File = root.resolvePath("utf8.properties");
+            var utf8:File = root.resolvePath("UTF-8.properties");
 
             var charset:String = getCharset(utf8);
             assertEquals(Charset.UTF_8, charset);
