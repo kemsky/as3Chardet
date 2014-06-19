@@ -86,7 +86,7 @@ package
             fileStream.open(file, FileMode.READ);
             try
             {
-                while (fileStream.bytesAvailable > 0)
+                while (fileStream.bytesAvailable > 0 && result == null)
                 {
                     var len:int = fileStream.bytesAvailable > 1024 ? 1024 : fileStream.bytesAvailable;
 
