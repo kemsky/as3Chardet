@@ -4,9 +4,10 @@ package org.kemsky
 
     public class nsEUCSampler
     {
-        internal var mTotal:int = 0;
-        internal var mThreshold:int = 200;
-        internal var mState:int = 0;
+        private var mTotal:int = 0;
+        private var mThreshold:int = 200;
+        private var mState:int = 0;
+
         public var mFirstByteCnt:Vector.<int> = new Vector.<int>(94);
         public var mSecondByteCnt:Vector.<int> = new Vector.<int>(94);
         public var mFirstByteFreq:Vector.<Number> = new Vector.<Number>(94);
@@ -15,14 +16,15 @@ package org.kemsky
         public function nsEUCSampler()
         {
             Reset();
-
         }
 
         public function Reset():void
         {
             mTotal = 0;
             mState = 0;
-            for (var i:int = 0; i < 94; i++)
+
+            var i:int = 0;
+            for (i = 0; i < 94; i++)
             {
                 mFirstByteCnt[i] = mSecondByteCnt[i] = 0;
             }
@@ -74,8 +76,7 @@ package org.kemsky
                     case 2:
                         if ((b & 0x0080) != 0)
                         {
-                            if ((0xff == (0xff & b))
-                                    || (0xa1 > (0xff & b)))
+                            if ((0xff == (0xff & b)) || (0xa1 > (0xff & b)))
                             {
                                 mState = 1;
                             }
@@ -118,7 +119,8 @@ package org.kemsky
             var s:Number;
             var sum:Number = 0.0;
 
-            for (var i:int = 0; i < 94; i++)
+            var i:int = 0;
+            for (i = 0; i < 94; i++)
             {
                 s = array1[i] - array2[i];
                 sum += s * s;

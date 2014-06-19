@@ -1,14 +1,11 @@
 package org.kemsky
 {
     import flash.utils.ByteArray;
-
     import org.kemsky.statistics.Big5Statistics;
     import org.kemsky.statistics.EUCJPStatistics;
     import org.kemsky.statistics.EUCKRStatistics;
     import org.kemsky.statistics.EUCTWStatistics;
-
     import org.kemsky.statistics.GB2312Statistics;
-
     import org.kemsky.statistics.nsEUCStatistics;
     import org.kemsky.verifiers.nsBIG5Verifier;
     import org.kemsky.verifiers.nsCP1252Verifier;
@@ -39,23 +36,23 @@ package org.kemsky
         public static const NO_OF_LANGUAGES:int = 6;
         public static const MAX_VERIFIERS:int = 16;
 
-        internal var mVerifier:Vector.<nsVerifier>;
+        private var mVerifier:Vector.<nsVerifier>;
 
-        internal var mStatisticsData:Vector.<nsEUCStatistics>;
+        private var mStatisticsData:Vector.<nsEUCStatistics>;
 
-        internal var mSampler:nsEUCSampler = new nsEUCSampler();
+        private var mSampler:nsEUCSampler = new nsEUCSampler();
 
-        internal var mState:Vector.<int> = new Vector.<int>(MAX_VERIFIERS, true);
+        private var mState:Vector.<int> = new Vector.<int>(MAX_VERIFIERS, true);
 
-        internal var mItemIdx:Vector.<int> = new Vector.<int>(MAX_VERIFIERS, true);
+        private var mItemIdx:Vector.<int> = new Vector.<int>(MAX_VERIFIERS, true);
 
-        internal var mItems:int;
-        internal var mClassItems:int;
+        private var mItems:int;
+        private var mClassItems:int;
 
-        internal var mDone:Boolean;
-        internal var mRunSampler:Boolean;
-        internal var mClassRunSampler:Boolean;
+        private var mRunSampler:Boolean;
+        private var mClassRunSampler:Boolean;
 
+        protected var mDone:Boolean;
 
         public function nsPSMDetector(langFlag:int = -1, aItems:int = -1, aVerifierSet:Vector.<nsVerifier> = null, aStatisticsSet:Vector.<nsEUCStatistics> = null)
         {
