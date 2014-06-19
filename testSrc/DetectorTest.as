@@ -3,7 +3,6 @@ package
     import flash.filesystem.File;
     import flash.filesystem.FileMode;
     import flash.filesystem.FileStream;
-    import flash.utils.ByteArray;
 
     import mx.logging.ILogger;
     import mx.logging.Log;
@@ -11,10 +10,6 @@ package
     import org.flexunit.asserts.assertEquals;
     import org.kemsky.Charset;
     import org.kemsky.CharsetDetector;
-
-    import org.kemsky.nsDetector;
-
-    import org.kemsky.nsPSMDetector;
 
     public class DetectorTest
     {
