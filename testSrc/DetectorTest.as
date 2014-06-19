@@ -46,6 +46,24 @@ package
             assertEquals(Charset.Ascii, charset);
         }
 
+        [Test]
+        public function testUTF16LE():void
+        {
+            var iso_8859_1:File = root.resolvePath("UTF16LE.properties");
+
+            var charset:String = getCharset(iso_8859_1);
+            assertEquals(Charset.UTF_16LE, charset);
+        }
+
+        [Test]
+        public function testUTF16BE():void
+        {
+            var iso_8859_1:File = root.resolvePath("UTF16BE.properties");
+
+            var charset:String = getCharset(iso_8859_1);
+            assertEquals(Charset.UTF_16BE, charset);
+        }
+
         private function getCharset(file:File):String
         {
             log.info("detect: {0}", file.nativePath);
