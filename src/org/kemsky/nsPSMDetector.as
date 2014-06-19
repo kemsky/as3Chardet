@@ -20,8 +20,7 @@ package org.kemsky
 
         internal var mSampler:nsEUCSampler = new nsEUCSampler();
 
-        //MAX_VERIFIERS
-        internal var mState:Vector.<int> = new Vector.<int>();/*byte*/
+        internal var mState:Vector.<int> = new Vector.<int>(MAX_VERIFIERS, true);
 
         internal var mItemIdx:Vector.<int> = new Vector.<int>(MAX_VERIFIERS, true);
 
