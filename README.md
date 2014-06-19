@@ -11,68 +11,19 @@ More information can be found at http://www.mozilla.org/projects/intl/chardet.ht
 
 ```ActionScript
 
+    var result:Vector.<String> = new Vector.<String>();
+    
     var file:File = new File("...");
-    var result:String = null;
-    
-    var det:nsDetector = new nsDetector(nsPSMDetector.ALL);
-    det.Init(function (charset:String):void
-    {
-        log.info("observer: {0}", charset);
-        result = charset;
-    });
-    
-    var done:Boolean = false;
-    var isAscii:Boolean = true;
-    
-    var buffer:ByteArray = new ByteArray();
-    
     var fileStream:FileStream = new FileStream();
     fileStream.open(file, FileMode.READ);
     try
     {
-        while (fileStream.bytesAvailable > 0 && result == null)
-        {
-            var len:int = fileStream.bytesAvailable > 1024 ? 1024 : fileStream.bytesAvailable;
-    
-            fileStream.readBytes(buffer, 0, len);
-    
-            // Check if the stream is only ascii.
-            if (isAscii)
-            {
-                isAscii = det.isAscii(buffer);
-            }
-    
-            // DoIt if non-ascii and not done yet.
-            if (!isAscii && !done)
-            {
-                done = det.DoIt(buffer, false);
-            }
-        }
+        result = new CharsetDetector().detect(fileStream, 4);
     }
     finally
     {
         fileStream.close();
     }
     
-    det.DataEnd();
-    
-    
-    if(result == null)
-    {
-        if (isAscii)
-        {
-            result = Charset.Ascii;
-        }
-        else
-        {
-            var probable:Vector.<String> = det.getProbableCharsets();
-            for each (var charset:String in probable)
-            {
-                log.info("Probable Charset = {0}", charset);
-            }
-            result = probable[0];
-        }
-    }
-    
-    log.info("Charset: {0}\n", result);
+    log.info("Charsets: {0}\n", result);
 ```
