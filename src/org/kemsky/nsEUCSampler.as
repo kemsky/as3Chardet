@@ -1,5 +1,7 @@
 package org.kemsky
 {
+    import flash.utils.ByteArray;
+
     public class nsEUCSampler
     {
         internal var mTotal:int = 0;
@@ -36,7 +38,7 @@ package org.kemsky
             return mTotal > 1;
         }
 
-        internal function Sample(aIn:Vector.<int>, aLen:int):Boolean
+        internal function Sample(aIn:ByteArray):Boolean
         {
             if (mState == 1)
             {
@@ -46,21 +48,23 @@ package org.kemsky
             var p:int = 0;
 
             var i:int;
-            for (i = 0; (i < aLen) && (1 != mState); i++, p++)
+            for (i = 0; aIn != null && (i < aIn.bytesAvailable) && (1 != mState); i++, p++)
             {
+                var b:int = aIn.readByte();
+
                 switch (mState)
                 {
                     case 0:
-                        if ((aIn[p] & 0x0080) != 0)
+                        if ((b & 0x0080) != 0)
                         {
-                            if ((0xff == (0xff & aIn[p])) || (0xa1 > (0xff & aIn[p])))
+                            if ((0xff == (0xff & b)) || (0xa1 > (0xff & b)))
                             {
                                 mState = 1;
                             }
                             else
                             {
                                 mTotal++;
-                                mFirstByteCnt[(0xff & aIn[p]) - 0xa1]++;
+                                mFirstByteCnt[(0xff & b) - 0xa1]++;
                                 mState = 2;
                             }
                         }
@@ -68,17 +72,17 @@ package org.kemsky
                     case 1:
                         break;
                     case 2:
-                        if ((aIn[p] & 0x0080) != 0)
+                        if ((b & 0x0080) != 0)
                         {
-                            if ((0xff == (0xff & aIn[p]))
-                                    || (0xa1 > (0xff & aIn[p])))
+                            if ((0xff == (0xff & b))
+                                    || (0xa1 > (0xff & b)))
                             {
                                 mState = 1;
                             }
                             else
                             {
                                 mTotal++;
-                                mSecondByteCnt[(0xff & aIn[p]) - 0xa1]++;
+                                mSecondByteCnt[(0xff & b) - 0xa1]++;
                                 mState = 0;
                             }
                         }
@@ -119,8 +123,7 @@ package org.kemsky
                 s = array1[i] - array2[i];
                 sum += s * s;
             }
-            return Math.sqrt(sum) /
-                    94.0;
+            return Math.sqrt(sum) / 94.0;
         }
     }
 }

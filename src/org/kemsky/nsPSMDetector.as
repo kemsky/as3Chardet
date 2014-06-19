@@ -1,5 +1,7 @@
 package org.kemsky
 {
+    import flash.utils.ByteArray;
+
     public class nsPSMDetector
     {
         public static const ALL:int = 0;
@@ -221,7 +223,7 @@ package org.kemsky
         {
         }
 
-        public function HandleData(aBuf:Vector.<int>, len:int):Boolean
+        public function HandleData(aBuf:ByteArray):Boolean
         {
             var i:int;
             var j:int;
@@ -229,9 +231,9 @@ package org.kemsky
             var b:int; /*byte*/
             var st:int; /*byte*/
 
-            for (i = 0; i < len; i++)
+            for (i = 0; i < aBuf.bytesAvailable; i++)
             {
-                b = aBuf[i];
+                b = aBuf.readByte();
 
                 for (j = 0; j < mItems;)
                 {
@@ -295,7 +297,7 @@ package org.kemsky
 
             if (mRunSampler)
             {
-                Sample(aBuf, len);
+                Sample(aBuf);
             }
 
             return mDone;
@@ -326,11 +328,11 @@ package org.kemsky
 
             if (mRunSampler)
             {
-                Sample(null, 0, true);
+                Sample(null, true);
             }
         }
 
-        public function Sample(aBuf:Vector.<int>, aLen:int, aLastChance:Boolean = false):void
+        public function Sample(aBuf:ByteArray, aLastChance:Boolean = false):void
         {
             var possibleCandidateNum:int = 0;
             var j:int;
@@ -353,7 +355,7 @@ package org.kemsky
 
             if (mRunSampler)
             {
-                mRunSampler = mSampler.Sample(aBuf, aLen);
+                mRunSampler = mSampler.Sample(aBuf);
                 if (((aLastChance && mSampler.GetSomeData()) ||
                         mSampler.EnoughData())
                         && (eucNum == possibleCandidateNum))

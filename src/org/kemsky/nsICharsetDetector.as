@@ -1,10 +1,12 @@
 package org.kemsky
 {
+    import flash.utils.ByteArray;
+
     public interface nsICharsetDetector
     {
-        function Init(observer:nsICharsetDetectionObserver):void;
+        function Init(observer:Function):void;
 
-        function DoIt(aBuf:Vector.<int>, aLen:int, oDontFeedMe:Boolean):Boolean;
+        function DoIt(aBuf:ByteArray, oDontFeedMe:Boolean):Boolean;
 
         function Done():void;
     }
