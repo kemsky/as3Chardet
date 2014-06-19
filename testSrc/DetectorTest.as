@@ -31,36 +31,36 @@ package
         [Test]
         public function testUtf8():void
         {
-            var utf8:File = root.resolvePath("UTF-8.properties");
+            var file:File = root.resolvePath("UTF-8.properties");
 
-            var charset:String = getCharset(utf8);
+            var charset:String = getCharset(file);
             assertEquals(Charset.UTF_8, charset);
         }
 
         [Test]
         public function testISO_8859_1():void
         {
-            var iso_8859_1:File = root.resolvePath("ISO-8859-1.properties");
+            var file:File = root.resolvePath("ISO-8859-1.properties");
 
-            var charset:String = getCharset(iso_8859_1);
+            var charset:String = getCharset(file);
             assertEquals(Charset.Ascii, charset);
         }
 
         [Test]
         public function testUTF16LE():void
         {
-            var iso_8859_1:File = root.resolvePath("UTF16LE.properties");
+            var file:File = root.resolvePath("UTF16LE.properties");
 
-            var charset:String = getCharset(iso_8859_1);
+            var charset:String = getCharset(file);
             assertEquals(Charset.UTF_16LE, charset);
         }
 
         [Test]
         public function testUTF16BE():void
         {
-            var iso_8859_1:File = root.resolvePath("UTF16BE.properties");
+            var file:File = root.resolvePath("UTF16BE.properties");
 
-            var charset:String = getCharset(iso_8859_1);
+            var charset:String = getCharset(file);
             assertEquals(Charset.UTF_16BE, charset);
         }
 
