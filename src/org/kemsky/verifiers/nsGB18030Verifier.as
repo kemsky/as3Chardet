@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsGB18030Verifier extends nsVerifier
     {
         public function nsGB18030Verifier()

@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsEUCKRVerifier extends nsVerifier
     {
         public function nsEUCKRVerifier()

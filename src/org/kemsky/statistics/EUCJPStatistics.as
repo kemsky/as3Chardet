@@ -1,6 +1,5 @@
 package org.kemsky.statistics
 {
-    import org.kemsky.*;
     public class EUCJPStatistics extends nsEUCStatistics
     {
         public function EUCJPStatistics()

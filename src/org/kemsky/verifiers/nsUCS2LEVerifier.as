@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsUCS2LEVerifier extends nsVerifier
     {
         public function nsUCS2LEVerifier()

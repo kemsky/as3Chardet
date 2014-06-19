@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsISO2022CNVerifier extends nsVerifier
     {
         public function nsISO2022CNVerifier()

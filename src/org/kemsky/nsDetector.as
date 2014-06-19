@@ -1,6 +1,6 @@
 package org.kemsky
 {
-    import flash.utils.ByteArray;
+    import flash.utils.IDataInput;
 
     public class nsDetector extends nsPSMDetector
     {
@@ -16,7 +16,7 @@ package org.kemsky
             mObserver = aObserver;
         }
 
-        public function DoIt(aBuf:ByteArray, oDontFeedMe:Boolean):Boolean
+        public function DoIt(aBuf:IDataInput, oDontFeedMe:Boolean):Boolean
         {
             if (aBuf == null || oDontFeedMe)
             {
@@ -40,7 +40,7 @@ package org.kemsky
             }
         }
 
-        public function isAscii(aBuf:ByteArray):Boolean
+        public function isAscii(aBuf:IDataInput):Boolean
         {
             var result:Boolean = true;
             while (aBuf.bytesAvailable > 0)
@@ -52,7 +52,6 @@ package org.kemsky
                     break;
                 }
             }
-            aBuf.position = 0;
             return result;
         }
     }

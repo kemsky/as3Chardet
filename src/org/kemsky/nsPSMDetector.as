@@ -1,6 +1,7 @@
 package org.kemsky
 {
-    import flash.utils.ByteArray;
+    import flash.utils.IDataInput;
+
     import org.kemsky.statistics.Big5Statistics;
     import org.kemsky.statistics.EUCJPStatistics;
     import org.kemsky.statistics.EUCKRStatistics;
@@ -56,12 +57,12 @@ package org.kemsky
 
         public function nsPSMDetector(langFlag:int = -1, aItems:int = -1, aVerifierSet:Vector.<nsVerifier> = null, aStatisticsSet:Vector.<nsEUCStatistics> = null)
         {
-            if(langFlag == -1 && aItems == -1)
+            if (langFlag == -1 && aItems == -1)
             {
                 initVerifiers(ALL);
                 Reset();
             }
-            else if(aItems == -1)
+            else if (aItems == -1)
             {
                 initVerifiers(langFlag);
                 Reset();
@@ -244,13 +245,15 @@ package org.kemsky
         {
         }
 
-        public function HandleData(aBuf:ByteArray):Boolean
+        public function HandleData(aBuf:IDataInput):Boolean
         {
             var i:int;
             var j:int;
 
-            var b:int; /*byte*/
-            var st:int; /*byte*/
+            var b:int;
+            /*byte*/
+            var st:int;
+            /*byte*/
 
             for (i = 0; i < aBuf.bytesAvailable; i++)
             {
@@ -353,7 +356,7 @@ package org.kemsky
             }
         }
 
-        public function Sample(aBuf:ByteArray, aLastChance:Boolean = false):void
+        public function Sample(aBuf:IDataInput, aLastChance:Boolean = false):void
         {
             var possibleCandidateNum:int = 0;
             var j:int;

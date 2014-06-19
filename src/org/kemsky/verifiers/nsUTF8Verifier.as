@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsUTF8Verifier extends nsVerifier
     {
         public function nsUTF8Verifier()

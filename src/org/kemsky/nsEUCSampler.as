@@ -1,6 +1,6 @@
 package org.kemsky
 {
-    import flash.utils.ByteArray;
+    import flash.utils.IDataInput;
 
     public class nsEUCSampler
     {
@@ -40,7 +40,7 @@ package org.kemsky
             return mTotal > 1;
         }
 
-        internal function Sample(aIn:ByteArray):Boolean
+        internal function Sample(aIn:IDataInput):Boolean
         {
             if (mState == 1)
             {
@@ -111,7 +111,7 @@ package org.kemsky
 
         internal function GetScore(aFirstByteFreq:Vector.<Number>, aFirstByteWeight:Number, aSecondByteFreq:Vector.<Number>, aSecondByteWeight:Number):Number
         {
-            return aFirstByteWeight * GetScore0(aFirstByteFreq, mFirstByteFreq) +  aSecondByteWeight * GetScore0(aSecondByteFreq, mSecondByteFreq);
+            return aFirstByteWeight * GetScore0(aFirstByteFreq, mFirstByteFreq) + aSecondByteWeight * GetScore0(aSecondByteFreq, mSecondByteFreq);
         }
 
         internal function GetScore0(array1:Vector.<Number>, array2:Vector.<Number>):Number

@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsBIG5Verifier extends nsVerifier
     {
         public function nsBIG5Verifier()

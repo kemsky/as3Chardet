@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsEUCJPVerifier extends nsVerifier
     {
         public function nsEUCJPVerifier()

@@ -1,6 +1,7 @@
 package org.kemsky.verifiers
 {
     import org.kemsky.*;
+
     public class nsCP1252Verifier extends nsVerifier
     {
         public function nsCP1252Verifier()
