@@ -5,12 +5,17 @@ package
     import flash.filesystem.FileStream;
     import flash.utils.ByteArray;
 
+    import mx.logging.ILogger;
+    import mx.logging.Log;
+
     import org.kemsky.nsDetector;
 
     import org.kemsky.nsPSMDetector;
 
     public class DetectorTest
     {
+        private static const log:ILogger = Log.getLogger("DetectorTest");
+
         private static const path:String = "D:\\Dev\\Projects\\as3Chardet\\testSrc\\";
 
         public function DetectorTest()
@@ -27,7 +32,7 @@ package
             var det:nsDetector = new nsDetector(nsPSMDetector.ALL);
             det.Init(function (charset:String):void
             {
-                trace(charset);
+                log.info(charset);
             });
 
             var done:Boolean = false;
@@ -41,7 +46,11 @@ package
             {
                 while (fileStream.bytesAvailable > 0)
                 {
-                    fileStream.readBytes(buffer, 0, fileStream.bytesAvailable > 1024 ? 1024 : fileStream.bytesAvailable);
+                    var len:int = fileStream.bytesAvailable > 1024 ? 1024 : fileStream.bytesAvailable;
+
+                    fileStream.readBytes(buffer, 0, len);
+
+                    buffer.position = 0;
 
                     // Check if the stream is only ascii.
                     if (isAscii)
@@ -67,14 +76,14 @@ package
 
             if (isAscii)
             {
-                trace("CHARSET = ASCII");
+                log.info("CHARSET = ASCII");
             }
             else
             {
                 var prob:Vector.<String> = det.getProbableCharsets();
                 for (var i:int = 0; i < prob.length; i++)
                 {
-                    trace("Probable Charset = " + prob[i]);
+                    log.info("Probable Charset = " + prob[i]);
                 }
             }
         }

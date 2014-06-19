@@ -42,14 +42,18 @@ package org.kemsky
 
         public function isAscii(aBuf:ByteArray):Boolean
         {
-            for (var i:int = 0; i < aBuf.bytesAvailable; i++)
+            var result:Boolean = true;
+            while (aBuf.bytesAvailable > 0)
             {
-                if ((0x0080 & aBuf.readByte()) != 0)
+                var b:int = aBuf.readByte();
+                if ((0x0080 & b) != 0)
                 {
-                    return false;
+                    result = false;
+                    break;
                 }
             }
-            return true;
+            aBuf.position = 0;
+            return result;
         }
     }
 }
