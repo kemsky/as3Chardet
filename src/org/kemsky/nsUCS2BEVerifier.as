@@ -76,7 +76,7 @@ package org.kemsky
             smStates[6] = ((((((((((((eStart) << 4) | (eStart)))) << 8) | (((((eError) << 4) | (eError))))))) << 16) | (((((((((6) << 4) | (6)))) << 8) | (((((6) << 4) | (6)))))))));
 
 
-            smCharset = "UTF-16BE";
+            smCharset = Charset.UTF_16BE;
             smStFactor = 6;
 
         }

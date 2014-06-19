@@ -70,7 +70,7 @@ package org.kemsky
             smStates[0] = ((((((((((((eError) << 4) | (eError)))) << 8) | (((((eError) << 4) | (eError))))))) << 16) | (((((((((eError) << 4) | (3)))) << 8) | (((((eStart) << 4) | (eError)))))))));
             smStates[1] = ((((((((((((eStart) << 4) | (eStart)))) << 8) | (((((eError) << 4) | (eError))))))) << 16) | (((((((((eItsMe) << 4) | (eItsMe)))) << 8) | (((((eItsMe) << 4) | (eItsMe)))))))));
 
-            smCharset = "GB2312";
+            smCharset = Charset.GB2312;
             smStFactor = 4;
         }
 

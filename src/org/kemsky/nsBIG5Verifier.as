@@ -73,7 +73,7 @@ package org.kemsky
             smStates[2] = ( (((( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eStart) << 4) | (eStart))))))) << 16) | (( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eStart) << 4) | (eError)))))))));
 
 
-            smCharset = "Big5";
+            smCharset = Charset.Big5;
             smStFactor = 5;
 
         }

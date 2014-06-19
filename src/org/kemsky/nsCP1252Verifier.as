@@ -73,7 +73,7 @@ package org.kemsky
             smStates[2] = ((((((((((((eStart) << 4) | (eStart)))) << 8) | (((((eStart) << 4) | (eStart))))))) << 16) | (((((((((eStart) << 4) | (eStart)))) << 8) | (((((4) << 4) | (eError)))))))));
 
 
-            smCharset = "windows-1252";
+            smCharset = Charset.windows_1252;
             smStFactor = 3;
 
         }

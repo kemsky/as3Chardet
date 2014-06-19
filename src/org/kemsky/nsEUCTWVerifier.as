@@ -76,7 +76,7 @@ package org.kemsky
             smStates[5] = ( (((( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eStart) << 4) | (eStart))))))) << 16) | (( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eError) << 4) | (eStart)))))))));
 
 
-            smCharset = "x-euc-tw";
+            smCharset = Charset.x_euc_tw;
             smStFactor = 7;
 
         }

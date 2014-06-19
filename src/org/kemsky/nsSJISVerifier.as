@@ -72,7 +72,7 @@ package org.kemsky
             smStates[2] = ( (((( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eStart) << 4) | (eStart))))))) << 16) | (( (((( (((eError) << 4) | (eError)))) << 8) | (( (((eItsMe) << 4) | (eItsMe)))))))));
 
 
-            smCharset = "Shift_JIS";
+            smCharset = Charset.Shift_JIS;
             smStFactor = 6;
         }
 

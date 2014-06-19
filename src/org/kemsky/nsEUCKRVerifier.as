@@ -71,7 +71,7 @@ package org.kemsky
             smStates[1] = ((((((((((((eStart) << 4) | (eStart)))) << 8) | (((((eError) << 4) | (eError))))))) << 16) | (((((((((eItsMe) << 4) | (eItsMe)))) << 8) | (((((eItsMe) << 4) | (eItsMe)))))))));
 
 
-            smCharset = "EUC-KR";
+            smCharset = Charset.EUC_KR;
             smStFactor = 4;
         }
 

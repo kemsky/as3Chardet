@@ -8,6 +8,9 @@ package
     import mx.logging.ILogger;
     import mx.logging.Log;
 
+    import org.flexunit.asserts.assertEquals;
+    import org.kemsky.Charset;
+
     import org.kemsky.nsDetector;
 
     import org.kemsky.nsPSMDetector;
@@ -18,16 +21,34 @@ package
 
         private static const path:String = "D:\\Dev\\Projects\\as3Chardet\\testSrc\\";
 
+        private var root:File;
+
         public function DetectorTest()
         {
+            root = new File(path);
         }
 
         [Test]
         public function testUtf8():void
         {
-            var root:File = new File(path);
-
             var utf8:File = root.resolvePath("utf8.properties");
+
+            var charset:String = getCharset(utf8);
+            assertEquals(Charset.UTF_8, charset);
+        }
+
+        [Test]
+        public function testISO_8859_1():void
+        {
+            var iso_8859_1:File = root.resolvePath("ISO-8859-1.properties");
+
+            var charset:String = getCharset(iso_8859_1);
+            assertEquals(Charset.Ascii, charset);
+        }
+
+        private function getCharset(file:File):String
+        {
+            log.info("detect: {0}", file.nativePath);
 
             var det:nsDetector = new nsDetector(nsPSMDetector.ALL);
             det.Init(function (charset:String):void
@@ -41,7 +62,7 @@ package
             var buffer:ByteArray = new ByteArray();
 
             var fileStream:FileStream = new FileStream();
-            fileStream.open(utf8, FileMode.READ);
+            fileStream.open(file, FileMode.READ);
             try
             {
                 while (fileStream.bytesAvailable > 0)
@@ -49,8 +70,6 @@ package
                     var len:int = fileStream.bytesAvailable > 1024 ? 1024 : fileStream.bytesAvailable;
 
                     fileStream.readBytes(buffer, 0, len);
-
-                    buffer.position = 0;
 
                     // Check if the stream is only ascii.
                     if (isAscii)
@@ -74,18 +93,21 @@ package
 
             det.DataEnd();
 
-            if (isAscii)
-            {
-                log.info("CHARSET = ASCII");
-            }
-            else
+            var result:String = Charset.Ascii;
+
+            if (!isAscii)
             {
                 var prob:Vector.<String> = det.getProbableCharsets();
+                result = prob[0];
                 for (var i:int = 0; i < prob.length; i++)
                 {
                     log.info("Probable Charset = " + prob[i]);
                 }
             }
+
+            log.info("Charset: {0}\n", result);
+
+            return result;
         }
     }
 }

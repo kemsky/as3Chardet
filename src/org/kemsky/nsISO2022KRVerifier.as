@@ -74,7 +74,7 @@ package org.kemsky
             smStates[4] = ( (((( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eStart) << 4) | (eStart))))))) << 16) | (( (((( (((eItsMe) << 4) | (eError)))) << 8) | (( (((eError) << 4) | (eError)))))))));
 
 
-            smCharset = "ISO-2022-KR";
+            smCharset = Charset.ISO_2022_KR;
             smStFactor = 6;
         }
 
