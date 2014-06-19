@@ -20,5 +20,6 @@ package org.kemsky
         public static const windows_1252:String = "windows-1252";
         public static const Big5:String = "Big5";
         public static const Ascii:String = "Ascii";
+        public static const HZ_GB_2312:String = "HZ-GB-2312";
     }
 }

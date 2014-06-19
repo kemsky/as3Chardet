@@ -1,12 +1,13 @@
 package org.kemsky.verifiers
 {
-    import org.kemsky.*;
+    import org.kemsky.Charset;
+
     public class nsHZVerifier extends nsVerifier
     {
-        internal static var smCclass:Vector.<int>;
-        internal static var smStates:Vector.<int>;
-        internal static var smStFactor:int;
-        internal static var smCharset:String;
+       private var smCclass:Vector.<int>;
+       private var smStates:Vector.<int>;
+       private var smStFactor:int;
+       private var smCharset:String;
 
         public override function cclass():Vector.<int>
         {
@@ -76,7 +77,7 @@ package org.kemsky.verifiers
             smStates[5] = ( (((( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eStart) << 4) | (eStart))))))) << 16) | (( (((( (((eStart) << 4) | (eStart)))) << 8) | (( (((eItsMe) << 4) | (4)))))))));
 
 
-            smCharset = "HZ-GB-2312";
+            smCharset = Charset.HZ_GB_2312;
             smStFactor = 6;
         }
 

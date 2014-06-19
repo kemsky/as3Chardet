@@ -3,10 +3,10 @@ package org.kemsky.verifiers
     import org.kemsky.*;
     public class nsCP1252Verifier extends nsVerifier
     {
-        internal static var smCclass:Vector.<int>;
-        internal static var smStates:Vector.<int>;
-        internal static var smStFactor:int;
-        internal static var smCharset:String;
+       private var smCclass:Vector.<int>;
+       private var smStates:Vector.<int>;
+       private var smStFactor:int;
+       private var smCharset:String;
 
         public override function cclass():Vector.<int>
         {
