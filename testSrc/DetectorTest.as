@@ -68,10 +68,13 @@ package
         {
             log.info("file: {0}", file.nativePath);
 
+            var result:String = null;
+
             var det:nsDetector = new nsDetector(nsPSMDetector.ALL);
             det.Init(function (charset:String):void
             {
                 log.info("observer: {0}", charset);
+                result = charset;
             });
 
             var done:Boolean = false;
@@ -111,15 +114,21 @@ package
 
             det.DataEnd();
 
-            var result:String = Charset.Ascii;
 
-            if (!isAscii)
+            if(result == null)
             {
-                var prob:Vector.<String> = det.getProbableCharsets();
-                result = prob[0];
-                for (var i:int = 0; i < prob.length; i++)
+                if (isAscii)
                 {
-                    log.info("Probable Charset = " + prob[i]);
+                    result = Charset.Ascii;
+                }
+                else
+                {
+                    var probable:Vector.<String> = det.getProbableCharsets();
+                    for each (var charset:String in probable)
+                    {
+                        log.info("Probable Charset = {0}", charset);
+                    }
+                    result = probable[0];
                 }
             }
 
