@@ -7,11 +7,11 @@ The original author is Frank Tang. What is available here is the ActionScript po
 The original source in C++ can be found from http://lxr.mozilla.org/mozilla/source/intl/chardet/
 More information can be found at http://www.mozilla.org/projects/intl/chardet.html
 
-Example:
+Example
 
-    ```ActionScript
+```ActionScript
+
             var file:File = new File("...");
-
             var result:String = null;
 
             var det:nsDetector = new nsDetector(nsPSMDetector.ALL);
@@ -75,4 +75,4 @@ Example:
             }
 
             log.info("Charset: {0}\n", result);
-    ```
+```
