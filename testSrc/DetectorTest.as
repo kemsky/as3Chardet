@@ -66,12 +66,12 @@ package
 
         private function getCharset(file:File):String
         {
-            log.info("detect: {0}", file.nativePath);
+            log.info("file: {0}", file.nativePath);
 
             var det:nsDetector = new nsDetector(nsPSMDetector.ALL);
             det.Init(function (charset:String):void
             {
-                log.info(charset);
+                log.info("observer: {0}", charset);
             });
 
             var done:Boolean = false;
