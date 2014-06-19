@@ -83,7 +83,7 @@ package org.kemsky.verifiers
 
         public override function isUCS2():Boolean
         {
-            return false;
+            return true;
         }
     }
 }
