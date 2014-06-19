@@ -9,7 +9,7 @@ More information can be found at http://www.mozilla.org/projects/intl/chardet.ht
 
 <b>Example</b>
     ```ActionScript
-            log.info("file: {0}", file.nativePath);
+            var file:File = new File("...");
 
             var result:String = null;
 
