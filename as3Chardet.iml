@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="as3Chardet">
     <configurations>
-      <configuration name="as3Chardet" target-platform="Desktop" output-type="Library" output-file="as3Chardet.swc" output-folder="$MODULE_DIR$/bin">
+      <configuration name="as3Chardet" target-platform="Desktop" output-type="Library" output-file="as3Chardet_1.0.swc" output-folder="$MODULE_DIR$/bin">
         <dependencies target-player="14.0">
           <entries>
             <entry library-id="75311984-7997-4661-b25d-07b05a5b3b9e">
