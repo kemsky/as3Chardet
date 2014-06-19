@@ -1,61 +1,10 @@
 package org.kemsky.statistics
 {
-    import org.kemsky.*;
     public class GB2312Statistics extends nsEUCStatistics
     {
-        internal static var mFirstByteFreq:Vector.<Number>;
-        internal static var mFirstByteStdDev:Number;
-        internal static var mFirstByteMean:Number;
-        internal static var mFirstByteWeight:Number;
-        internal static var mSecondByteFreq:Vector.<Number>;
-        internal static var mSecondByteStdDev:Number;
-        internal static var mSecondByteMean:Number;
-        internal static var mSecondByteWeight:Number;
-
-        public override function mFirstByteFreq():Vector.<Number>
-        {
-            return GB2312Statistics.mFirstByteFreq;
-        }
-
-        public override function mFirstByteStdDev():Number
-        {
-            return GB2312Statistics.mFirstByteStdDev;
-        }
-
-        public override function mFirstByteMean():Number
-        {
-            return GB2312Statistics.mFirstByteMean;
-        }
-
-        public override function mFirstByteWeight():Number
-        {
-            return GB2312Statistics.mFirstByteWeight;
-        }
-
-        public override function mSecondByteFreq():Vector.<Number>
-        {
-            return GB2312Statistics.mSecondByteFreq;
-        }
-
-        public override function mSecondByteStdDev():Number
-        {
-            return GB2312Statistics.mSecondByteStdDev;
-        }
-
-        public override function mSecondByteMean():Number
-        {
-            return GB2312Statistics.mSecondByteMean;
-        }
-
-        public override function mSecondByteWeight():Number
-        {
-            return GB2312Statistics.mSecondByteWeight;
-        }
-
         public function GB2312Statistics()
         {
-
-            GB2312Statistics.mFirstByteFreq = Vector.<Number>([
+            mFirstByteFreq = Vector.<Number>([
                 0.011628, // FreqH[a1]
                 0.000000, // FreqH[a2]
                 0.000000, // FreqH[a3]
@@ -153,11 +102,11 @@ package org.kemsky.statistics
 
             ]);
 
-            GB2312Statistics.mFirstByteStdDev = 0.020081; // Lead Byte StdDev
-            GB2312Statistics.mFirstByteMean = 0.010638; // Lead Byte Mean
-            GB2312Statistics.mFirstByteWeight = 0.586533; // Lead Byte Weight
+            mFirstByteStdDev = 0.020081; // Lead Byte StdDev
+            mFirstByteMean = 0.010638; // Lead Byte Mean
+            mFirstByteWeight = 0.586533; // Lead Byte Weight
 
-            GB2312Statistics.mSecondByteFreq = Vector.<Number>([
+            mSecondByteFreq = Vector.<Number>([
                 0.006202, // FreqL[a1]
                 0.031008, // FreqL[a2]
                 0.005426, // FreqL[a3]
@@ -255,9 +204,9 @@ package org.kemsky.statistics
 
             ]);
 
-            GB2312Statistics.mSecondByteStdDev = 0.014156; // Trail Byte StdDev
-            GB2312Statistics.mSecondByteMean = 0.010638; // Trail Byte Mean
-            GB2312Statistics.mSecondByteWeight = 0.413467; // Trial Byte Weight
+            mSecondByteStdDev = 0.014156; // Trail Byte StdDev
+            mSecondByteMean = 0.010638; // Trail Byte Mean
+            mSecondByteWeight = 0.413467; // Trial Byte Weight
         }
     }
 }

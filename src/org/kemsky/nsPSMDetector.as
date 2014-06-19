@@ -395,10 +395,10 @@ package org.kemsky
                                 (!(mVerifier[mItemIdx[j]].charset()) == "Big5"))
                         {
                             var score:Number = mSampler.GetScore(
-                                    mStatisticsData[mItemIdx[j]].mFirstByteFreq(),
-                                    mStatisticsData[mItemIdx[j]].mFirstByteWeight(),
-                                    mStatisticsData[mItemIdx[j]].mSecondByteFreq(),
-                                    mStatisticsData[mItemIdx[j]].mSecondByteWeight());
+                                    mStatisticsData[mItemIdx[j]].getFirstByteFreq(),
+                                    mStatisticsData[mItemIdx[j]].getFirstByteWeight(),
+                                    mStatisticsData[mItemIdx[j]].getSecondByteFreq(),
+                                    mStatisticsData[mItemIdx[j]].getSecondByteWeight());
                             if ((0 == eucCnt++) || (bestScore > score))
                             {
                                 bestScore = score;

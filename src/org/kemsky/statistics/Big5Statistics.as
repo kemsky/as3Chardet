@@ -1,61 +1,11 @@
 package org.kemsky.statistics
 {
-    import org.kemsky.*;
     public class Big5Statistics extends nsEUCStatistics
     {
-        internal static var mFirstByteFreq:Vector.<Number>;
-        internal static var mFirstByteStdDev:Number;
-        internal static var mFirstByteMean:Number;
-        internal static var mFirstByteWeight:Number;
-        internal static var mSecondByteFreq:Vector.<Number>;
-        internal static var mSecondByteStdDev:Number;
-        internal static var mSecondByteMean:Number;
-        internal static var mSecondByteWeight:Number;
-
-        public override function mFirstByteFreq():Vector.<Number>
-        {
-            return Big5Statistics.mFirstByteFreq;
-        }
-
-        public override function mFirstByteStdDev():Number
-        {
-            return Big5Statistics.mFirstByteStdDev;
-        }
-
-        public override function mFirstByteMean():Number
-        {
-            return Big5Statistics.mFirstByteMean;
-        }
-
-        public override function mFirstByteWeight():Number
-        {
-            return Big5Statistics.mFirstByteWeight;
-        }
-
-        public override function mSecondByteFreq():Vector.<Number>
-        {
-            return Big5Statistics.mSecondByteFreq;
-        }
-
-        public override function mSecondByteStdDev():Number
-        {
-            return Big5Statistics.mSecondByteStdDev;
-        }
-
-        public override function mSecondByteMean():Number
-        {
-            return Big5Statistics.mSecondByteMean;
-        }
-
-        public override function mSecondByteWeight():Number
-        {
-            return Big5Statistics.mSecondByteWeight;
-        }
-
         public function Big5Statistics()
         {
 
-            Big5Statistics.mFirstByteFreq = Vector.<Number>([
+            mFirstByteFreq = Vector.<Number>([
                 0.000000, // FreqH[a1]
                 0.000000, // FreqH[a2]
                 0.000000, // FreqH[a3]
@@ -152,11 +102,11 @@ package org.kemsky.statistics
                 0.000000  // FreqH[fe]
             ]);
 
-            Big5Statistics.mFirstByteStdDev = 0.020606; // Lead Byte StdDev
-            Big5Statistics.mFirstByteMean = 0.010638; // Lead Byte Mean
-            Big5Statistics.mFirstByteWeight = 0.675261; // Lead Byte Weight
+            mFirstByteStdDev = 0.020606; // Lead Byte StdDev
+            mFirstByteMean = 0.010638; // Lead Byte Mean
+            mFirstByteWeight = 0.675261; // Lead Byte Weight
 
-            Big5Statistics.mSecondByteFreq = Vector.<Number>([
+            mSecondByteFreq = Vector.<Number>([
                 0.020256, // FreqL[a1]
                 0.003293, // FreqL[a2]
                 0.045811, // FreqL[a3]
@@ -253,9 +203,9 @@ package org.kemsky.statistics
                 0.006554  // FreqL[fe]
             ]);
 
-            Big5Statistics.mSecondByteStdDev = 0.009909; // Trail Byte StdDev
-            Big5Statistics.mSecondByteMean = 0.010638; // Trail Byte Mean
-            Big5Statistics.mSecondByteWeight = 0.324739;  // Trial Byte Weight
+            mSecondByteStdDev = 0.009909; // Trail Byte StdDev
+            mSecondByteMean = 0.010638; // Trail Byte Mean
+            mSecondByteWeight = 0.324739;  // Trial Byte Weight
         }
     }
 }

@@ -2,87 +2,54 @@ package org.kemsky.statistics
 {
     public class nsEUCStatistics
     {
-        /**
-         * Abstract
-         * @return
-         */
-        public function mFirstByteFreq():Vector.<Number>
+        protected var mFirstByteFreq:Vector.<Number>;
+        protected var mFirstByteStdDev:Number;
+        protected var mFirstByteMean:Number;
+        protected var mFirstByteWeight:Number;
+        protected var mSecondByteFreq:Vector.<Number>;
+        protected var mSecondByteStdDev:Number;
+        protected var mSecondByteMean:Number;
+        protected var mSecondByteWeight:Number;
+
+        public function getFirstByteFreq():Vector.<Number>
         {
-            return null;
+            return mFirstByteFreq;
+        }
+
+        public function getFirstByteStdDev():Number
+        {
+            return mFirstByteStdDev;
+        }
+
+        public function getFirstByteMean():Number
+        {
+            return mFirstByteMean;
+        }
+
+        public function getFirstByteWeight():Number
+        {
+            return mFirstByteWeight;
         }
 
 
-        /**
-         * Abstract
-         * @return
-         */
-        public function mFirstByteStdDev():Number
+        public function getSecondByteFreq():Vector.<Number>
         {
-            return 0;
+            return mSecondByteFreq;
         }
 
-
-        /**
-         * Abstract
-         * @return
-         */
-        public function mFirstByteMean():Number
+        public function getSecondByteStdDev():Number
         {
-            return 0;
+            return mSecondByteStdDev;
         }
 
-
-        /**
-         * Abstract
-         * @return
-         */
-        public function mFirstByteWeight():Number
+        public function getSecondByteMean():Number
         {
-            return 0;
+            return mSecondByteMean;
         }
 
-
-        /**
-         * Abstract
-         * @return
-         */
-        public function mSecondByteFreq():Vector.<Number>
+        public function getSecondByteWeight():Number
         {
-            return null;
-        }
-
-
-        /**
-         * Abstract
-         * @return
-         */
-        public function mSecondByteStdDev():Number
-        {
-            return 0;
-        }
-
-
-        /**
-         * Abstract
-         * @return
-         */
-        public function mSecondByteMean():Number
-        {
-            return 0;
-        }
-
-
-        /**
-         * Abstract
-         * @return
-         */
-        public function mSecondByteWeight():Number
-        {
-            return 0;
-        }
-
-        public function nsEUCStatistics()
-        {
+            return mSecondByteWeight;
         }
     }
 }

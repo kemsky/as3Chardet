@@ -1,61 +1,11 @@
 package org.kemsky.statistics
 {
-    import org.kemsky.*;
     public class EUCTWStatistics extends nsEUCStatistics
     {
-        internal static var mFirstByteFreq:Vector.<Number>;
-        internal static var mFirstByteStdDev:Number;
-        internal static var mFirstByteMean:Number;
-        internal static var mFirstByteWeight:Number;
-        internal static var mSecondByteFreq:Vector.<Number>;
-        internal static var mSecondByteStdDev:Number;
-        internal static var mSecondByteMean:Number;
-        internal static var mSecondByteWeight:Number;
-
-        public override function mFirstByteFreq():Vector.<Number>
-        {
-            return EUCTWStatistics.mFirstByteFreq;
-        }
-
-        public override function mFirstByteStdDev():Number
-        {
-            return EUCTWStatistics.mFirstByteStdDev;
-        }
-
-        public override function mFirstByteMean():Number
-        {
-            return EUCTWStatistics.mFirstByteMean;
-        }
-
-        public override function mFirstByteWeight():Number
-        {
-            return EUCTWStatistics.mFirstByteWeight;
-        }
-
-        public override function mSecondByteFreq():Vector.<Number>
-        {
-            return EUCTWStatistics.mSecondByteFreq;
-        }
-
-        public override function mSecondByteStdDev():Number
-        {
-            return EUCTWStatistics.mSecondByteStdDev;
-        }
-
-        public override function mSecondByteMean():Number
-        {
-            return EUCTWStatistics.mSecondByteMean;
-        }
-
-        public override function mSecondByteWeight():Number
-        {
-            return EUCTWStatistics.mSecondByteWeight;
-        }
-
         public function EUCTWStatistics()
         {
 
-            EUCTWStatistics.mFirstByteFreq = Vector.<Number>([
+            mFirstByteFreq = Vector.<Number>([
                 0.000000, // FreqH[a1]
                 0.000000, // FreqH[a2]
                 0.000000, // FreqH[a3]
@@ -152,11 +102,11 @@ package org.kemsky.statistics
                 0.000000  // FreqH[fe]
             ]);
 
-            EUCTWStatistics.mFirstByteStdDev = 0.016681; // Lead Byte StdDev
-            EUCTWStatistics.mFirstByteMean = 0.010638; // Lead Byte Mean
-            EUCTWStatistics.mFirstByteWeight = 0.715599; // Lead Byte Weight
+            mFirstByteStdDev = 0.016681; // Lead Byte StdDev
+            mFirstByteMean = 0.010638; // Lead Byte Mean
+            mFirstByteWeight = 0.715599; // Lead Byte Weight
 
-            EUCTWStatistics.mSecondByteFreq = Vector.<Number>([
+            mSecondByteFreq = Vector.<Number>([
                 0.028933, // FreqL[a1]
                 0.011371, // FreqL[a2]
                 0.011053, // FreqL[a3]
@@ -253,9 +203,9 @@ package org.kemsky.statistics
                 0.008671  // FreqL[fe]
             ]);
 
-            EUCTWStatistics.mSecondByteStdDev = 0.006630; // Trail Byte StdDev
-            EUCTWStatistics.mSecondByteMean = 0.010638; // Trail Byte Mean
-            EUCTWStatistics.mSecondByteWeight = 0.284401; // Trial Byte Weight
+            mSecondByteStdDev = 0.006630; // Trail Byte StdDev
+            mSecondByteMean = 0.010638; // Trail Byte Mean
+            mSecondByteWeight = 0.284401; // Trial Byte Weight
         }
     }
 }

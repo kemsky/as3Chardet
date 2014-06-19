@@ -1,63 +1,10 @@
-/**
- * Created by dookie on 19.06.2014.
- */
 package org.kemsky.statistics
 {
-    import org.kemsky.*;
     public class EUCKRStatistics extends nsEUCStatistics
     {
-        internal static var mFirstByteFreq:Vector.<Number>;
-        internal static var mFirstByteStdDev:Number;
-        internal static var mFirstByteMean:Number;
-        internal static var mFirstByteWeight:Number;
-        internal static var mSecondByteFreq:Vector.<Number>;
-        internal static var mSecondByteStdDev:Number;
-        internal static var mSecondByteMean:Number;
-        internal static var mSecondByteWeight:Number;
-
-        public override function mFirstByteFreq():Vector.<Number>
-        {
-            return EUCKRStatistics.mFirstByteFreq;
-        }
-
-        public override function mFirstByteStdDev():Number
-        {
-            return EUCKRStatistics.mFirstByteStdDev;
-        }
-
-        public override function mFirstByteMean():Number
-        {
-            return EUCKRStatistics.mFirstByteMean;
-        }
-
-        public override function mFirstByteWeight():Number
-        {
-            return EUCKRStatistics.mFirstByteWeight;
-        }
-
-        public override function mSecondByteFreq():Vector.<Number>
-        {
-            return EUCKRStatistics.mSecondByteFreq;
-        }
-
-        public override function mSecondByteStdDev():Number
-        {
-            return EUCKRStatistics.mSecondByteStdDev;
-        }
-
-        public override function mSecondByteMean():Number
-        {
-            return EUCKRStatistics.mSecondByteMean;
-        }
-
-        public override function mSecondByteWeight():Number
-        {
-            return EUCKRStatistics.mSecondByteWeight;
-        }
-
         public function EUCKRStatistics()
         {
-            EUCKRStatistics.mFirstByteFreq = Vector.<Number>([
+            mFirstByteFreq = Vector.<Number>([
                 0.000000, // FreqH[a1]
                 0.000000, // FreqH[a2]
                 0.000000, // FreqH[a3]
@@ -155,11 +102,11 @@ package org.kemsky.statistics
 
             ]);
 
-            EUCKRStatistics.mFirstByteStdDev = 0.025593; // Lead Byte StdDev
-            EUCKRStatistics.mFirstByteMean = 0.010638; // Lead Byte Mean
-            EUCKRStatistics.mFirstByteWeight = 0.647437; // Lead Byte Weight
+            mFirstByteStdDev = 0.025593; // Lead Byte StdDev
+            mFirstByteMean = 0.010638; // Lead Byte Mean
+            mFirstByteWeight = 0.647437; // Lead Byte Weight
 
-            EUCKRStatistics.mSecondByteFreq = Vector.<Number>([
+            mSecondByteFreq = Vector.<Number>([
                 0.016694, // FreqL[a1]
                 0.000000, // FreqL[a2]
                 0.012778, // FreqL[a3]
@@ -257,9 +204,9 @@ package org.kemsky.statistics
 
             ]);
 
-            EUCKRStatistics.mSecondByteStdDev = 0.013937; // Trail Byte StdDev
-            EUCKRStatistics.mSecondByteMean = 0.010638; // Trail Byte Mean
-            EUCKRStatistics.mSecondByteWeight = 0.352563; // Trial Byte Weight
+            mSecondByteStdDev = 0.013937; // Trail Byte StdDev
+            mSecondByteMean = 0.010638; // Trail Byte Mean
+            mSecondByteWeight = 0.352563; // Trial Byte Weight
         }
     }
 }
