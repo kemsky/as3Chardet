@@ -3,7 +3,7 @@ as3Chardet
 
 as3Chardet is an ActionScript port of the source from mozilla's automatic charset detection algorithm
 
-The original author is Frank Tang. What is available here is the ActionScript port of the (outdated :( ) java port 
+The original author is Frank Tang. What is available here is the ActionScript port of the (outdated :( ) Java port 
 http://jchardet.sourceforge.net/. 
 The original source in C++ can be found from http://lxr.mozilla.org/mozilla/source/intl/chardet/
 More information can be found at http://www.mozilla.org/projects/intl/chardet.html.
