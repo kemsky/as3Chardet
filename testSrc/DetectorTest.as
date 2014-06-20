@@ -60,6 +60,15 @@ package
             assertEquals(Charset.UTF_16BE, charset);
         }
 
+        [Test]
+        public function testWin1252():void
+        {
+            var file:File = root.resolvePath("windows-1252.properties");
+
+            var charset:String = getCharset(file);
+            assertEquals(Charset.windows_1252, charset);
+        }
+
         private function getCharset(file:File):String
         {
             log.info("file: {0}", file.nativePath);
@@ -71,7 +80,7 @@ package
             fileStream.open(file, FileMode.READ);
             try
             {
-                result = new CharsetDetector().detect(fileStream)[0];
+                result = new CharsetDetector().detect(fileStream, 4)[0];
             }
             finally
             {

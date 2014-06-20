@@ -53,13 +53,13 @@ package org.kemsky
 
                 input.readBytes(buffer, 0, len);
 
-                byteCount+= len;
-
                 // Check if the stream is only ascii.
                 if (isAscii)
                 {
                     isAscii = det.isAscii(buffer);
                 }
+
+                byteCount+= buffer.position;
 
                 //rewind
                 buffer.position = 0;
@@ -68,6 +68,7 @@ package org.kemsky
                 if (!isAscii && !done)
                 {
                     done = det.DoIt(buffer, false);
+                    byteCount+= buffer.position;
                 }
             }
 

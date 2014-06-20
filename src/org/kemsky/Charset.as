@@ -22,5 +22,7 @@ package org.kemsky
         public static const Big5:String = "big5";
         public static const ASCII:String = "us-ascii";
         public static const HZ_GB_2312:String = "hz-gb-2312";
+
+        public static const nomatch:String = "nomatch";
     }
 }

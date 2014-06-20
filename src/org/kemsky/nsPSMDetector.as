@@ -338,12 +338,12 @@ package org.kemsky
 
             if (mItems == 2)
             {
-                if ((mVerifier[mItemIdx[0]].charset()) == "GB18030")
+                if ((mVerifier[mItemIdx[0]].charset()) == Charset.GB18030)
                 {
                     Report(mVerifier[mItemIdx[1]].charset());
                     mDone = true;
                 }
-                else if ((mVerifier[mItemIdx[1]].charset()) == "GB18030")
+                else if ((mVerifier[mItemIdx[1]].charset()) == Charset.GB18030)
                 {
                     Report(mVerifier[mItemIdx[0]].charset());
                     mDone = true;
@@ -369,7 +369,7 @@ package org.kemsky
                     eucNum++;
                 }
                 if ((!mVerifier[mItemIdx[j]].isUCS2()) &&
-                        (!(mVerifier[mItemIdx[j]].charset()) == "GB18030"))
+                        (!(mVerifier[mItemIdx[j]].charset()) == Charset.GB18030))
                 {
                     possibleCandidateNum++;
                 }
@@ -392,7 +392,7 @@ package org.kemsky
                     for (j = 0; j < mItems; j++)
                     {
                         if ((null != mStatisticsData[mItemIdx[j]]) &&
-                                (!(mVerifier[mItemIdx[j]].charset()) == "Big5"))
+                                (!(mVerifier[mItemIdx[j]].charset()) == Charset.Big5))
                         {
                             var score:Number = mSampler.GetScore(
                                     mStatisticsData[mItemIdx[j]].getFirstByteFreq(),
@@ -420,7 +420,7 @@ package org.kemsky
             if (mItems <= 0)
             {
                 var nomatch:Vector.<String> = new Vector.<String>(1);
-                nomatch[0] = "nomatch";
+                nomatch[0] = Charset.nomatch;
                 return nomatch;
             }
 
