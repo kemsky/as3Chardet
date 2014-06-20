@@ -8,7 +8,7 @@ http://jchardet.sourceforge.net/.
 The original source in C++ can be found from http://lxr.mozilla.org/mozilla/source/intl/chardet/
 More information can be found at http://www.mozilla.org/projects/intl/chardet.html.
 
-UTF8, UNICODE LE, UNICODE LE and ASCII charsets are detected reliably.
+UTF8, UNICODE LE, UNICODE BE and ASCII charsets are detected reliably.
 
 <b>Example</b>
 
