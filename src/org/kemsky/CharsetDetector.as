@@ -45,8 +45,6 @@ package org.kemsky
             var buffer:ByteArray = new ByteArray();
             buffer.length = bufferSize;
 
-            var byteCount:int = 0;
-
             while (input.bytesAvailable > 0 && result.length == 0)
             {
                 var len:int = input.bytesAvailable > bufferSize ? bufferSize : input.bytesAvailable;
@@ -59,8 +57,6 @@ package org.kemsky
                     isAscii = det.isAscii(buffer);
                 }
 
-                byteCount+= buffer.position;
-
                 //rewind
                 buffer.position = 0;
 
@@ -68,16 +64,10 @@ package org.kemsky
                 if (!isAscii && !done)
                 {
                     done = det.DoIt(buffer, false);
-                    byteCount+= buffer.position;
                 }
             }
 
             det.DataEnd();
-
-            if(Log.isDebug())
-            {
-                log.debug("Detected after {0} bytes read", byteCount);
-            }
 
             if (result.length == 0)
             {
