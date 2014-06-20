@@ -71,7 +71,7 @@ package
             fileStream.open(file, FileMode.READ);
             try
             {
-                result = new CharsetDetector().detect(fileStream, 4)[0];
+                result = new CharsetDetector().detect(fileStream)[0];
             }
             finally
             {
